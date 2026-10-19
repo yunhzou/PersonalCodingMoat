@@ -4,21 +4,31 @@ Before starting project work, clone or reuse [PersonalCodingMoat](https://github
 
 ## 1. Explanation
 
-Keep verbal explanations clear and concise. Keep niche technical details brief. Communication must be efficient and understandable to researchers.
+Keep explanations and documentation short, plain, and understandable to researchers. When communicating with the user, skip niche details unless they matter so the user can focus on important decisions. Say what is needed, then stop. Don’t repeat yourself or keep selling an idea. Explain more when the user asks or when a design decision needs discussion.
 
-## 2. Code structure
+## 2. Coding principles
 
-Code structure must coevolve with vibe coding. During a rapid proof of concept, it is okay to prototype quickly, even in a single file with hundreds of lines of code. Once the user confirms that a feature is useful, refactor it into a coherent, modular architecture.
+### 2.1 Coding style
 
-Pay significant attention to high-level architectural design. Discuss the intended functionality, module boundaries, and responsibilities in depth with the developer. Think about the long-term structure: establish the key concepts and separable modules before focusing on niche functionality. Specify which parts of the code belong in each module and how the modules interact.
+Write short, elegant, generalizable code with clear names. Avoid defensive coding and case-specific patches. Fix the underlying logic so the solution applies across cases.
 
-Organize modules around clear responsibilities and interfaces. Keep closely related functionality together, minimize dependencies between unrelated components, and separate reusable core logic from experiment-specific scripts. Modularity means meaningful separation of responsibilities, not simply dividing code into smaller files.
+Avoid abbreviations and unnecessary technical terms in names and comments. Follow the explanation rules in section 1: communicate plainly and efficiently for humans. Comments should explain reasoning that the code cannot show.
 
-Follow the architectural principles and hierarchy previously approved by the user. Integrate new functionality into that structure, and identify when extending or revising the architecture is necessary. Avoid introducing competing structures or abstractions without a concrete need.
+Keep code easy to follow. Don’t make it clever or compress it just to reduce line count.
 
-Revisit the architecture with the developer whenever refactoring reveals conflicting responsibilities, functionality is difficult to fit into the core modules, or features need refactoring before the necessary architectural changes have been agreed upon and completed. Resolve these design questions before proceeding with the affected refactoring.
+### 2.2 Architectural design
 
-You may provide architectural design choices, tradeoffs, and recommendations, but the user makes the final architectural decision. Once the design is agreed upon, document it in `design.md` and create architectural diagrams showing the module hierarchy, responsibilities, interfaces, and main interactions.
+Code structure must coevolve with vibe coding. During a rapid proof of concept, it is okay to prototype quickly, even in a single file with hundreds of lines. Once the user confirms that a feature is useful, refactor it into a coherent, modular architecture.
+
+Discuss the high-level design with the developer. Establish the key concepts, module responsibilities, interfaces, and interactions before focusing on niche functionality. Think about the long-term structure and specify which parts of the code belong in each module.
+
+Keep closely related functionality together, minimize dependencies between unrelated components, and separate reusable core logic from experiment-specific scripts. Modularity means meaningful separation of responsibilities, not simply dividing code into smaller files.
+
+Follow the architecture previously approved by the user. Consider how new functionality fits and whether the design needs to change. Avoid competing structures or abstractions without a concrete need.
+
+Revisit the design with the developer when refactoring reveals conflicting responsibilities, functionality does not fit the core modules, or the necessary architectural changes are still unresolved. Resolve these questions before proceeding with the affected refactoring.
+
+You may provide architectural choices, tradeoffs, and recommendations, but the user makes the final decision. Once agreed, record the design in `design.md` and create diagrams showing module responsibilities, hierarchy, interfaces, and interactions.
 
 ## 3. Cleaning
 
